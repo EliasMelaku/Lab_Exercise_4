@@ -29,20 +29,27 @@
 })();
 
 function add() {
-  var userInput = prompt("Enter Numbers Separated by comma");
+  var userInput = prompt("Enter Numbers Separated by +");
   let numbers;
   let sum = 0;
-  numbers = userInput.split(",");
-
+  
+  numbers = userInput.split("+");
   numbers.forEach(function (number) {
-    sum += Number(number);
+      sum += Number(number);
+      
+      // console.log(isNaN(number))
+    
   });
-  console.log("Sum is " + sum);
+  if(isNaN(sum)){
+    console.log("Wrong Input")
+  }
+  else{
+console.log("Sum is " + sum);}
 }
 function subtract() {
-  var userInput = prompt("Enter The Numbers Separated By comma");
+  var userInput = prompt("Enter The Numbers Separated By -");
   let numbers;
-  numbers = userInput.split(",");
+  numbers = userInput.split("-");
   let difference = Number(numbers[0]);
 
   numbers.forEach(function (number, index) {
@@ -51,18 +58,26 @@ function subtract() {
       difference -= Number(number);
     }
   });
-  console.log("Difference is " + difference);
+  if(isNaN(difference)){
+    console.log("Wrong Input")
+  }
+  else{
+console.log("Difference is " + difference);}
 }
 function multiply() {
-  var userInput = prompt("Enter The Numbers Separated By comma");
+  var userInput = prompt("Enter The Numbers Separated By *");
   let numbers;
-  numbers = userInput.split(",");
+  numbers = userInput.split("*");
   let product = 1;
 
   numbers.forEach(function (number) {
     product *= number;
   });
-  console.log("Product is " + product);
+  if(isNaN(multiply)){
+    console.log("Wrong Input")
+  }
+  else{
+console.log("Product is " + multiply);}
 }
 function divide() {
   var userInputOne = prompt("Enter The Numerator");
@@ -71,7 +86,11 @@ function divide() {
   var quotient = (userInputTwo != 0) ? userInputOne / userInputTwo : "Can't divide by 0";
  
 
-  console.log("Quotient is" + quotient);
+  if(isNaN(quotient)){
+    console.log("Wrong Input")
+  }
+  else{
+console.log("Quotient is " + sum);}
 }
 function minAndMax() {
   var userInput = prompt("Enter The Numbers Separated By comma");
@@ -89,12 +108,20 @@ function minAndMax() {
       min = number;
     }
   });
-  console.log("Max : " + max + " and " + "Min : " + min);
+  if(isNaN(max) || isNaN(min)){
+    console.log("Wrong Input")
+  }
+  else{
+console.log("Max is " + max + "\n Min is " + min);}
 }
 function square() {
   var userInput = prompt("Enter a number to square");
   let result = Math.pow(userInput, 2);
-  console.log("Square is : " + result);
+  if(isNaN(result)){
+    console.log("Wrong Input")
+  }
+  else{
+console.log("Result is " + result);}
 }
 function average() {
   var userInput = prompt("Enter The Numbers Separated By comma");
@@ -105,5 +132,9 @@ function average() {
     sum += Number(number);
   });
   average = sum / numbers.length;
-  console.log("Average is : " + average);
+  if(isNaN(average)){
+    console.log("Wrong Input")
+  }
+  else{
+console.log("Average is " + average);}
 }
