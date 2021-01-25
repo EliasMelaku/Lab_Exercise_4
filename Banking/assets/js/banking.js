@@ -21,7 +21,7 @@ function withdrawal(amount){
         
     }
     else {
-        window.alert("Incorrect amount for withdrawal");
+        window.alert("Withdrawal amount greater than balance or too little");
         }
 }
 function balance(){
@@ -34,6 +34,7 @@ function transfer(amount){
         you.balance -= amount;
         notYou.balance += amount;
         window.alert("Transfer successful")
+        window.alert("Your account balance is now " + you.balance)
     }
     else {
         window.alert("Transfer amount exceeds the balance")
@@ -49,19 +50,27 @@ function transfer(amount){
 
           if (usersChoice == 1){
             var amount = prompt("Enter amount to be depostied: ");
-            deposit(amount);
+            if (isNaN(amount)){
+              window.alert("Incorrect value submitted")
+            }
+            else deposit(amount);
           }
           else if (usersChoice == 2){
             var amount = parseInt(prompt("Enter amount to be withdrawn: "));
-            withdrawal(amount);
+            if (isNaN(amount)){
+              window.alert("Incorrect value submitted")
+            }
+            else withdrawal(amount);
           }
           else if (usersChoice == 3){
             balance();
           }
           else if (usersChoice == 4){
             var amount = parseInt(prompt("Enter amount to be transferred: "));
-            transfer(amount);
-            console.log
+            if (isNaN(amount)){
+              window.alert("Incorrect value submitted")
+            }
+            else transfer(amount);
           }
           else if (usersChoice == 5){
               break;
