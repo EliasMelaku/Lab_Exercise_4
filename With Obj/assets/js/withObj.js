@@ -31,8 +31,8 @@ for (let i = 0; i < parseInt(numberOfFamily); i++) {
 personProfile.familyMembers[i] = prompt("Your Family Members " + (i + 1));
 }
     // call age and check vote fun
-// personProfile.ageCalc();
-// personProfile.checkVote();
+personProfile.ageCalc();
+personProfile.checkVote();
 // personProfile.calcBmi(parseInt(personProfile.height), parseInt(personProfile.weight));
 // Adding Self Invoking Function Expression
 (function() {

@@ -32,20 +32,22 @@ console.log( (isEligibleToVote)?"Eligible to vote" : "Not Eligible to vote");
 
 // ================family storage array
 
+//family storage array
+
 let familyMember = new Array();
 
 let numberOfFamily;
 
 numberOfFamily = prompt("Number of Family ? ");
-
+//Receiving the family number
 for (let i = 0; i < parseInt(numberOfFamily); i++) {
 familyMember[i] = prompt("Your Family Members " + (i + 1));
 }
 
 console.log("Family Members ");
-
+//Displaying the family member with foreach
 familyMember.forEach(function(member) {
-console.log("Family Member " + (window.i) + " : " + member);
+console.log("Family Member " + (index + 1) + " : " + member);
 });
 
 
